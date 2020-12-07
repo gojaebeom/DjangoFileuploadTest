@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+    <h1>Create</h1>
+    <form action="/store" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="images"><br>
+        <input type="file" name="images"><br>
+        <input type="file" name="images"><br>
+        <button type="submit">생성</button>
+    </form>
+</body>
+</html>
