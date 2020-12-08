@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Home</h1>
+{% extends 'layout.html' %}
+{% block content %}
     <div style="display:flex;flex-direction:column;justify-content:flex-start;align-items:center">
         {% for image in images %}
+            {% if image.imgX and image.imgY %}
+                <iframe
+                    width="500px;"
+                    height="200"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCArJV7Z5NU_M54qFp8tLdm4Am6Ogriqsc&q={{image.imgX}},{{image.imgY}}" allowfullscreen>
+                </iframe>
+            {% endif %}
             <div style="width:500px;">
                 <img src="{{ image.img.url }}" alt="img" style="width:100%;border-radius:5px;">
             </div>
         {% endfor %}
     </div>
-</body>
-</html>
+{% endblock %}
