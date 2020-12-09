@@ -21,6 +21,7 @@ from config import settings
 from fileupload import views
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', views.home),  # 홈화면
     path('create', views.create),   # 게시물 생성 화면
     path('store', views.multi_file_upload),  # 게시물 생성화면에서 생성 버튼 클릭시 요청되는 화면 없는 뷰
